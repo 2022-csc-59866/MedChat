@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+## This is a Chat Application, created specifically to cater towards doctors and nurses or any other personel that could be working at a medical institution. This project directly remedies the issue of inconvenient communication practices in these institutions by providing a platform to communicate specifically through channels that could be curated to specific agendas or departments. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
