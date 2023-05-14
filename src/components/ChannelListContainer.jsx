@@ -1,31 +1,31 @@
-import React, { useState } from 'react'
-import { ChannelList, ChannelPreviewMessenger, useChatContext } from 'stream-chat-react';
+import React, { useState } from 'react';
+import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import HospitalIcon from '../assets/hospital.png';
-import LogoutIcon from '../assets/logout.png';
+import HospitalIcon from '../assets/hospital.png'
+import LogoutIcon from '../assets/logout.png'
 
 const cookies = new Cookies();
 
 const SideBar = ({ logout }) => (
-    <div className='channel-list__sidebar'>
-        <div className='channel-list__sidebar__icon1'>
-            <div className='icon1__inner'>
-                <img src={HospitalIcon} alt='Hospital' width='30' />
+    <div className="channel-list__sidebar">
+        <div className="channel-list__sidebar__icon1">
+            <div className="icon1__inner">
+                <img src={HospitalIcon} alt="Hospital" width="30" />
             </div>
         </div>
-        <div className='channel-list__sidebar__icon2'>
-            <div className='icon1__inner' onClick={logout}>
-                <img src={LogoutIcon} alt='Logout' width='30' />
+        <div className="channel-list__sidebar__icon2">
+            <div className="icon1__inner" onClick={logout}>
+                <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
         </div>
     </div>
-)
+);
 
 const CompanyHeader = () => (
-    <div className='channel-list__header'>
-        <p className='channel-list__header__text'>Medical Pager</p>
+    <div className="channel-list__header">
+        <p className="channel-list__header__text">Medical Pager</p>
     </div>
 )
 
@@ -52,12 +52,12 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
         window.location.reload();
     }
 
-    const filters = { members: { $in: [client.userID] } }
+    const filters = { members: { $in: [client.userID] } };
 
     return (
         <>
             <SideBar logout={logout} />
-            <div className='channel-list__list__wrapper'>
+            <div className="channel-list__list__wrapper">
                 <CompanyHeader />
                 <ChannelSearch setToggleContainer={setToggleContainer} />
                 <ChannelList
@@ -110,7 +110,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
                 />
             </div>
         </>
-    )
+    );
 }
 
 const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) => {
@@ -118,7 +118,7 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) =>
 
     return (
         <>
-            <div className='channel-list__container'>
+            <div className="channel-list__container">
                 <ChannelListContent
                     setIsCreating={setIsCreating}
                     setCreateType={setCreateType}
@@ -126,7 +126,7 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) =>
                 />
             </div>
 
-            <div className='channel-list__container-responsive'
+            <div className="channel-list__container-responsive"
                 style={{ left: toggleContainer ? "0%" : "-89%", backgroundColor: "#005fff" }}
             >
                 <div className="channel-list__container-toggle" onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}>
@@ -137,10 +137,10 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) =>
                     setIsEditing={setIsEditing}
                     setToggleContainer={setToggleContainer}
                 />
-
             </div>
         </>
     )
+
 }
 
-export default ChannelListContainer
+export default ChannelListContainer;
